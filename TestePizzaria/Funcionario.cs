@@ -91,7 +91,7 @@ namespace PizzariaWinForm
 
 
 
-        public bool VerificaoFuncioanrio(string usuario, string senha )
+        public bool VerificaoFuncioanrio(string login, string password )
         {
             dbConc conex = new dbConc();
             try
@@ -100,9 +100,7 @@ namespace PizzariaWinForm
               
 
                 comando.Connection = conex.AbrirBanco();
-                comando.CommandText = "select *from Funcionario where loginFuncionario=@login && senhaFuncionario= @senha ";
-                comando.Parameters.AddWithValue("@login", usuario);
-                comando.Parameters.AddWithValue("@senha", senha);
+                comando.CommandText = "select *from Funcionario where loginFuncionario= '" + login + "' and senhaFuncionario= '" + password + "' ";
                 comando.CommandType = CommandType.Text;
 
                 MySqlDataReader leitura = comando.ExecuteReader();
@@ -117,6 +115,7 @@ namespace PizzariaWinForm
                         frmMenu menu = new frmMenu();
                         menu.RecebendoValorLogin(resultado1, resultado);
                         menu.Show();
+                        
                         
                     }
                     return true;
@@ -139,6 +138,7 @@ namespace PizzariaWinForm
             }
 
         }
+      
 
 
         public void PreencherText(string cargo, string usuario, string nome)
@@ -204,6 +204,8 @@ namespace PizzariaWinForm
         }
         public void Cadastrar()
         {
+
+
             string strSql = "INSERT INTO Funcionario (nomeFuncionario, enderecoFuncionario, numeroFuncionario ,loginFuncionario, senhaFuncionario, cpfFuncionario, cargoFuncionario, telefoneFuncionario) " +
                    "VALUES ('" + nomeFuncionario + "','" + enderecoFuncionario + "','" + numeroFuncionario + "' ,'" + usuario + "' , '" + senha + "', '" + cpfFuncionario + "','" + cargoFuncionario + "','" + telefoneFuncionario + "')";
 
@@ -218,6 +220,38 @@ namespace PizzariaWinForm
             {
                 MessageBox.Show(ex.Message);
 
+            }
+            finally
+            {
+                conexao.FecharBanco(conexao.AbrirBanco());
+                // conexao = null;
+                // comando = null;
+            }
+
+
+        } 
+        public bool VerificarUsuario( string usuario)
+        {
+
+
+            string vericadora = "select Count(1) from Funcionario where loginFuncionario='" + usuario + "' ";
+            try
+            {
+
+                comando = new MySqlCommand(vericadora, conexao.AbrirBanco());
+                var resultado = comando.ExecuteScalar();
+                if (resultado != null)
+                {
+                    return true;
+                }
+                else
+                    return false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
             finally
             {

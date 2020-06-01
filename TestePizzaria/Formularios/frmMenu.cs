@@ -217,7 +217,10 @@ namespace PizzariaWinForm
 
         private void btnSair_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            frmLogin login = new frmLogin();
+            login.Show();
+
         }
 
         private void lblData_Click(object sender, EventArgs e)
@@ -240,9 +243,15 @@ namespace PizzariaWinForm
         private void frmMenu_Load(object sender, EventArgs e)
         {
 
-            if (lblCargo.Text == "Gerente")
+            if (lblCargo.Text == "Recepcionista ")
             {
-                //btnConsulta.Enabled = false;
+                btnRelatorio.Enabled = false;
+                btnCadastrarFunc.Enabled = false;
+            } 
+            if (lblCargo.Text == "Garcom")
+            {
+                btnRelatorio.Enabled = false;
+                btnCadastrarFunc.Enabled = false;
             }
 
 
@@ -258,6 +267,9 @@ namespace PizzariaWinForm
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            frmLogin login = new frmLogin();
+            login.Show();
+            
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)

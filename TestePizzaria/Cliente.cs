@@ -127,7 +127,7 @@ namespace PizzariaWinForm
 
         {
 
-            string Cliente = "Id Cliente";
+          
             string strSql = "select idCliente as 'Id Cliente', nomeCliente as Nome, enderecoCliente as 'Endereço', numeroCliente as Numero, telefoneCliente as Telefone, cpfCliente as CPF  from Cliente";
 
 
@@ -174,6 +174,38 @@ namespace PizzariaWinForm
             {
                 throw;
             }
+        }
+        public bool VerificarCpf(string cpfCliente)
+        {
+
+
+            string vericadora = "select Count(1) from Cliente where cpfCliente='" + cpfCliente + "' ";
+            try
+            {
+
+                comando = new MySqlCommand(vericadora, conexao.AbrirBanco());
+                var resultado = comando.ExecuteScalar();
+                if (resultado != null)
+                {
+                    return true;
+                }
+                else
+                    return false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexao.FecharBanco(conexao.AbrirBanco());
+                // conexao = null;
+                // comando = null;
+            }
+
+
         }
         public void PesquisarCpf(string cpf)
         {

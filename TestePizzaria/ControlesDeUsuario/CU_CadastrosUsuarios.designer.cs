@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CU_CadastrosUsuarios));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -41,9 +40,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbConsultaFornecedor = new System.Windows.Forms.ComboBox();
             this.btnAdicionarFuncionario = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
+            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,20 +54,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 657);
             this.panel1.TabIndex = 13;
-            // 
-            // dgvFuncionario
-            // 
-            this.dgvFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFuncionario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFuncionario.Location = new System.Drawing.Point(10, 0);
-            this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.ReadOnly = true;
-            this.dgvFuncionario.Size = new System.Drawing.Size(1123, 657);
-            this.dgvFuncionario.TabIndex = 15;
-            this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentClick_1);
-            this.dgvFuncionario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellDoubleClick);
             // 
             // panel4
             // 
@@ -141,6 +127,7 @@
             this.btnAtulizar.Text = "Atualizar";
             this.btnAtulizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAtulizar.UseVisualStyleBackColor = false;
+            this.btnAtulizar.Click += new System.EventHandler(this.btnAtulizar_Click_1);
             // 
             // txtConsultaFornecedor
             // 
@@ -193,28 +180,44 @@
             this.btnAdicionarFuncionario.Text = "Add Novo Funcionario";
             this.btnAdicionarFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdicionarFuncionario.UseVisualStyleBackColor = false;
+            this.btnAdicionarFuncionario.Click += new System.EventHandler(this.btnAdicionarFuncionario_Click_1);
+            // 
+            // dgvFuncionario
+            // 
+            this.dgvFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFuncionario.Location = new System.Drawing.Point(10, 95);
+            this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.ReadOnly = true;
+            this.dgvFuncionario.RowHeadersVisible = false;
+            this.dgvFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFuncionario.Size = new System.Drawing.Size(1113, 537);
+            this.dgvFuncionario.TabIndex = 21;
+            this.dgvFuncionario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellDoubleClick_1);
             // 
             // CU_CadastrosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "CU_CadastrosUsuarios";
             this.Size = new System.Drawing.Size(1133, 657);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,7 +225,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvFuncionario;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
@@ -233,5 +235,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbConsultaFornecedor;
         private System.Windows.Forms.Button btnAdicionarFuncionario;
+        private System.Windows.Forms.DataGridView dgvFuncionario;
     }
 }

@@ -253,5 +253,37 @@ namespace PizzariaWinForm
                 throw;
             }
         }
+        public bool VerificarCnpj(string cnpj)
+        {
+
+
+            string vericadora = "select Count(1) from Fornecedor where cnpj='" + cnpj + "' ";
+            try
+            {
+
+                comando = new MySqlCommand(vericadora, conexao.AbrirBanco());
+                var resultado = comando.ExecuteScalar();
+                if (resultado != null)
+                {
+                    return true;
+                }
+                else
+                    return false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexao.FecharBanco(conexao.AbrirBanco());
+                // conexao = null;
+                // comando = null;
+            }
+
+
+        }
     }
 }

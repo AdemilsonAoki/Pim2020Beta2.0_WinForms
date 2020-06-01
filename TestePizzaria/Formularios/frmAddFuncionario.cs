@@ -58,13 +58,14 @@ namespace PizzariaWinForm.Formularios
             cmbCargo.Text = cargo;
             txtUsuario.Text = usuario;
             txtSenha.Text = senha;
+            txtUsuario.Enabled = false;
         }
         private void EsvaziandoCampos()
         {
 
             txtNome.Text = "";
             txtEndereco.Text = "";
-            mskTelefone.Text = "" ;
+            mskTelefone.Text = "";
             txtCpf.Text = "";
             txtUsuario.Text = "";
             txtSenha.Text = "";
@@ -73,21 +74,29 @@ namespace PizzariaWinForm.Formularios
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (txtCpf.Text != " " && txtNome.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "" && txtUsuario.Text != "" && txtSenha.Text != "" )
+            if (txtCpf.Text != " " && txtNome.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "" && txtUsuario.Text != "" && txtSenha.Text != "")
             {
 
-                RecebendoValor();
-                funcionario.Cadastrar();
-                var result = MessageBox.Show("Cadastrado com sucesso!", MessageBoxButtons.OK.ToString());
-                if (result == DialogResult.OK)
-                {
-                    this.Close();
 
+                if (funcionario.VerificarUsuario(txtUsuario.Text) == false)
+                {
+                    RecebendoValor();
+                    funcionario.Cadastrar();
+                    var result = MessageBox.Show("Cadastrado com sucesso!", MessageBoxButtons.OK.ToString());
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario já existente!", MessageBoxButtons.OK.ToString());
+                    txtUsuario.Focus();
                 }
 
-                
-                
-                EsvaziandoCampos();
+
+
 
             }
         }
@@ -103,29 +112,27 @@ namespace PizzariaWinForm.Formularios
             if (txtCpf.Text != " " && txtNome.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "" && txtUsuario.Text != "" && txtSenha.Text != "")
             {
 
+
+
                 RecebendoValor();
                 funcionario.CodFuncionario = int.Parse(txtId.Text);
+
                 funcionario.Alterar();
 
-            }
+                var result1 = MessageBox.Show("Alterado com sucesso!", MessageBoxButtons.OK.ToString());
+                if (result1 == DialogResult.OK)
+                {
+                    this.Close();
 
+                }
 
-            var result = MessageBox.Show("Funcionario, Alterado com sucesso!", MessageBoxButtons.OK.ToString());
+                else
+                {
+                    MessageBox.Show("Os campos devem ser preenchidos!!", MessageBoxButtons.OK.ToString());
 
-            if (result == DialogResult.OK)
-            {
-                this.Close();
-
-                EsvaziandoCampos();
-
-            }
-
-            else
-            {
-                MessageBox.Show("Os campos devem ser preenchidos!!", MessageBoxButtons.OK.ToString());
+                }
 
             }
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -15,8 +15,8 @@ namespace PizzariaWinForm.Formularios
         public frmCadastroCliente()
         {
             InitializeComponent();
-            
-                             
+
+
         }
 
 
@@ -37,6 +37,7 @@ namespace PizzariaWinForm.Formularios
         {
             btnCadastrar.Visible = false;
             btnAlterar.Visible = true;
+            txtCpf.Enabled = false;
             txtId.Text = id;
             txtNomeCliente.Text = cliente;
             txtEndereco.Text = endereco;
@@ -62,17 +63,27 @@ namespace PizzariaWinForm.Formularios
             if (txtCpf.Text != " " && txtNomeCliente.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "")
             {
 
-                RecebendoValor();
-                var result = MessageBox.Show("Cadastrado com sucesso!", MessageBoxButtons.OK.ToString());
 
-                if (result == DialogResult.OK)
+                if (cli.VerificarCpf(txtCpf.Text) == false)
                 {
-                    this.Close();
+                    RecebendoValor();
+                    cli.Cadastrar();
+                    var result = MessageBox.Show("Cadastrado com sucesso!", MessageBoxButtons.OK.ToString());
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+
+                    }
 
                 }
+                else
+                {
+                    var result = MessageBox.Show("Cpf já existe!", MessageBoxButtons.OK.ToString());
+                    txtCpf.Focus();
+                }
 
-                cli.Cadastrar();
-                EsvaziandoCampos();
+
+
 
             }
 
@@ -87,7 +98,7 @@ namespace PizzariaWinForm.Formularios
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            
+
             var result = MessageBox.Show(mensagem, fechar,
                               MessageBoxButtons.YesNo,
                               MessageBoxIcon.Question);
@@ -104,11 +115,11 @@ namespace PizzariaWinForm.Formularios
                              MessageBoxButtons.YesNo,
                              MessageBoxIcon.Question);
 
-            if (result != DialogResult.No  )
+            if (result != DialogResult.No)
             {
                 this.Close();
             }
-          
+
         }
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
@@ -126,24 +137,20 @@ namespace PizzariaWinForm.Formularios
         {
             if (txtCpf.Text != " " && txtNomeCliente.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "")
             {
-
                 RecebendoValor();
+
                 cli.Id = int.Parse(txtId.Text);
                 cli.Alterar();
+                var result1 = MessageBox.Show("alterado com sucesso!", MessageBoxButtons.OK.ToString());
+                if (result1 == DialogResult.OK)
+                {
+                    this.Close();
+
+                }
+
+
 
             }
-
-            
-            var result = MessageBox.Show("Cliente, Alterado com sucesso!", MessageBoxButtons.OK.ToString());
-
-            if (result == DialogResult.OK)
-            {
-                this.Close();
-
-                EsvaziandoCampos();
-
-            }
-
             else
             {
                 MessageBox.Show("Os campos devem ser preenchidos!!", MessageBoxButtons.OK.ToString());

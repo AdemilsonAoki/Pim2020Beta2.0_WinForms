@@ -22,30 +22,13 @@ namespace PizzariaWinForm
         
 
         frmMenu menu = new frmMenu();
-        public void RecebendoValor()
-        {
-            
-            login.Usuario = txtUsuario.Text;
-            login.Senha = txtSenha.Text;
-            
-            funcionario.Usuario = txtUsuario.Text;
-            funcionario.Senha = txtSenha.Text;
-            
-           
-            
-
-          
-
-
-        }
+     
+        
         
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            RecebendoValor();
-
-            
-
+          
             var validar = funcionario.VerificaoFuncioanrio(txtUsuario.Text, txtSenha.Text);
             if(validar == true)
             {
@@ -58,6 +41,7 @@ namespace PizzariaWinForm
                 MessageBox.Show("Login ou senha invalidos");
                 txtUsuario.Clear();
                 txtSenha.Clear();
+                txtUsuario.Focus();
             }
 
         }
@@ -71,6 +55,7 @@ namespace PizzariaWinForm
         {
            
         }
+       
     }
 
 

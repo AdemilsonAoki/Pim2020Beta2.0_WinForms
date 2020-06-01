@@ -28,7 +28,7 @@ namespace PizzariaWinForm.Formularios
             fornecedor.Numero = int.Parse(txtNumero.Text);
             fornecedor.Obs = rtxtObservacoes.Text;
         }
-        public void RecebendoValorDgv( string razao_social, string nome, string endereco, string numero, string telefone, string cnpj , string obs)
+        public void RecebendoValorDgv(string razao_social, string nome, string endereco, string numero, string telefone, string cnpj, string obs)
         {
             btnCadastrar.Visible = false;
             btnAlterar.Visible = true;
@@ -39,6 +39,7 @@ namespace PizzariaWinForm.Formularios
             txtCnpj.Text = cnpj;
             txtNumero.Text = numero;
             rtxtObservacoes.Text = obs;
+            txtCnpj.Enabled = false;
         }
         private void EsvaziandoCampos()
         {
@@ -54,21 +55,26 @@ namespace PizzariaWinForm.Formularios
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (txtCnpj.Text != " " && txtNome.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "" && txtRazaoSocial.Text != " " && rtxtObservacoes.Text !="") 
+            if (txtCnpj.Text != " " && txtNome.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "" && txtRazaoSocial.Text != " " && rtxtObservacoes.Text != "")
             {
 
-                RecebendoValor();
-               
-
-                fornecedor.Cadastrar();
-                var result = MessageBox.Show("Cadastrado com sucesso!", MessageBoxButtons.OK.ToString());
-
-                if (result == DialogResult.OK)
+                if (fornecedor.VerificarCnpj(txtCnpj.Text) == false)
                 {
-                    this.Close();
+                    RecebendoValor();
+                    fornecedor.Cadastrar();
+                    var result = MessageBox.Show("Cadastrado com sucesso!", MessageBoxButtons.OK.ToString());
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+
+                    }
 
                 }
-                EsvaziandoCampos();
+                else
+                {
+                    MessageBox.Show("CNPJ já existe!", MessageBoxButtons.OK.ToString());
+                    txtCnpj.Focus();
+                }
 
             }
 
@@ -91,19 +97,18 @@ namespace PizzariaWinForm.Formularios
             if (txtCnpj.Text != " " && txtNome.Text != " " && txtEndereco.Text != "" && mskTelefone.Text != "" && txtNumero.Text != "" && txtRazaoSocial.Text != " " && rtxtObservacoes.Text != "")
             {
 
-                RecebendoValor();
+             
+                    
+                    fornecedor.Alterar();
+                    var result = MessageBox.Show("Alterado com sucesso!", MessageBoxButtons.OK.ToString());
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
 
+                    }
 
+                
 
-                fornecedor.Alterar();
-                var result = MessageBox.Show("Fornecedor Alterado com sucesso!", MessageBoxButtons.OK.ToString());
-
-                if (result == DialogResult.OK)
-                {
-                    this.Close();
-
-                }
-                EsvaziandoCampos();
 
             }
 

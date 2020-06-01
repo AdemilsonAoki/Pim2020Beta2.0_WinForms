@@ -20,29 +20,32 @@ namespace PizzariaWinForm.ControlesDeUsuario
 
         private void cU_RelatoriosVendas1_Load(object sender, EventArgs e)
         {
-
+            dgvFuncionario.DataSource = funcionario.Listar();
         }
 
-        private void btnAdicionarFuncionario_Click(object sender, EventArgs e)
+      
+      
+
+       
+        private void dgvFuncionario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        
+        private void btnAdicionarFuncionario_Click_1(object sender, EventArgs e)
         {
             Formularios.frmAddFuncionario addFuncionario = new Formularios.frmAddFuncionario();
 
             addFuncionario.Show();
         }
 
-      
-
-        private void btnAtulizar_Click(object sender, EventArgs e)
+        private void btnAtulizar_Click_1(object sender, EventArgs e)
         {
             dgvFuncionario.DataSource = funcionario.Listar();
         }
 
-        private void dgvFuncionario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dgvFuncionario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFuncionario_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             string idDgv;
             string nomeDgv;

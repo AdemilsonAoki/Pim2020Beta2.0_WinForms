@@ -37,7 +37,8 @@ namespace PizzariaWinForm.ControlesDeUsuario
             relatorio.DataVendasI = DateTime.Parse(dtpDataI.Text);
             relatorio.DataVendasF = DateTime.Parse(dtpDataF.Text);
             dgvRelatorio.DataSource = relatorio.PesquisaData();
-            dgvRelatorioCancelados.DataSource = relatorio.PesquisaData();
+            dgvRelatorioCancelados.DataSource = relatorio.PesquisaDataCancelados();
+            CalculaTotais();
             
          
 
