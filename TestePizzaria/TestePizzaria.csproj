@@ -132,12 +132,6 @@
     <Compile Include="ControlesDeUsuario\CU_CompraFornecedores.designer.cs">
       <DependentUpon>CU_CompraFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlesDeUsuario\CU_Gastos.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlesDeUsuario\CU_Gastos.designer.cs">
-      <DependentUpon>CU_Gastos.cs</DependentUpon>
-    </Compile>
     <Compile Include="ControlesDeUsuario\CU_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,12 +155,6 @@
     </Compile>
     <Compile Include="ControlesDeUsuario\CU_RelatoriosVendas.designer.cs">
       <DependentUpon>CU_RelatoriosVendas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlesDeUsuario\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlesDeUsuario\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="dbConc.cs" />
     <Compile Include="Formularios\frmAddDespesa.cs">
@@ -232,15 +220,6 @@
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="Pizzaria.cs" />
-    <Compile Include="pizzariaDataSet.cs">
-      <DependentUpon>pizzariaDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="pizzariaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>pizzariaDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -255,9 +234,6 @@
     <EmbeddedResource Include="ControlesDeUsuario\CU_CompraFornecedores.resx">
       <DependentUpon>CU_CompraFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlesDeUsuario\CU_Gastos.resx">
-      <DependentUpon>CU_Gastos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\CU_Home.resx">
       <DependentUpon>CU_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\CU_RelatoriosVendas.resx">
       <DependentUpon>CU_RelatoriosVendas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlesDeUsuario\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmAddDespesa.resx">
       <DependentUpon>frmAddDespesa.cs</DependentUpon>
@@ -312,20 +285,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="packages.config" />
-    <None Include="pizzariaDataSet.xsc">
-      <DependentUpon>pizzariaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="pizzariaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>pizzariaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="pizzariaDataSet.xss">
-      <DependentUpon>pizzariaDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

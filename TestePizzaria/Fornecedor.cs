@@ -175,14 +175,14 @@ namespace PizzariaWinForm
             }
         }
 
-        public void PesquisarNome(string nome )
+        public DataTable PesquisarNome(string nome )
         {
            
             try
             {
                 
                 
-                comando = new MySqlCommand("select *from Fornecedor where nomeFantasia LIKE'%'  @nome '%' ORDER BY nomeFantasia", conexao.AbrirBanco());
+                comando = new MySqlCommand("select razaoSocial as 'Razão Social', cnpj as CNPJ, nomeFantasia as 'Nome Fantasia' , enderecoFornecedor as 'Endereço', numeroFornecedor as Numero, telefoneFornecedor as Telefone, observacoesFornecedor as 'Observaçòes'  from Fornecedor where nomeFantasia LIKE'%'  @nome '%' ORDER BY nomeFantasia", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@nome", nome);
                
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -191,7 +191,7 @@ namespace PizzariaWinForm
                
                
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
                
 
@@ -201,14 +201,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }  
-        public void PesquisarCnpj(string cnpj )
+        public DataTable PesquisarCnpj(string cnpj )
         {
            
             try
             {
                 
                 
-                comando = new MySqlCommand("select *from Fornecedor where cnpj LIKE'%'  @cnpj '%' ORDER BY cnpj", conexao.AbrirBanco());
+                comando = new MySqlCommand("select razaoSocial as 'Razão Social', cnpj as CNPJ, nomeFantasia as 'Nome Fantasia' , enderecoFornecedor as 'Endereço', numeroFornecedor as Numero, telefoneFornecedor as Telefone, observacoesFornecedor as 'Observaçòes'  from Fornecedor where cnpj LIKE'%'  @cnpj '%' ORDER BY cnpj", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@cnpj", cnpj);
                
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -217,7 +217,7 @@ namespace PizzariaWinForm
                
                
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
                
 
@@ -227,14 +227,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarRazaoSocial(string razaoSocial )
+        public DataTable PesquisarRazaoSocial(string razaoSocial )
         {
            
             try
             {
                 
                 
-                comando = new MySqlCommand("select *from Fornecedor where razaoSocial LIKE'%'  @razao_social '%' ORDER BY razaoSocial", conexao.AbrirBanco());
+                comando = new MySqlCommand("select razaoSocial as 'Razão Social', cnpj as CNPJ, nomeFantasia as 'Nome Fantasia' , enderecoFornecedor as 'Endereço', numeroFornecedor as Numero, telefoneFornecedor as Telefone, observacoesFornecedor as 'Observaçòes'  from Fornecedor where razaoSocial LIKE'%'  @razao_social '%' ORDER BY razaoSocial", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@razao_social", razaoSocial);
                
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -243,7 +243,7 @@ namespace PizzariaWinForm
                
                
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
                
 
@@ -263,7 +263,7 @@ namespace PizzariaWinForm
 
                 comando = new MySqlCommand(vericadora, conexao.AbrirBanco());
                 var resultado = comando.ExecuteScalar();
-                if (resultado != null)
+                if (resultado.ToString() != "0")
                 {
                     return true;
                 }

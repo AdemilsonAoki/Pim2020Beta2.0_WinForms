@@ -240,7 +240,7 @@ namespace PizzariaWinForm
 
                 comando = new MySqlCommand(vericadora, conexao.AbrirBanco());
                 var resultado = comando.ExecuteScalar();
-                if (resultado != null)
+                if (resultado.ToString() != "0" )
                 {
                     return true;
                 }
@@ -317,14 +317,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarCodigo(string codigo)
+        public DataTable PesquisarCodigo(string codigo)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Funcionario where codFuncionario LIKE'%'  @codFuncionario '%' ORDER BY codFuncionario", conexao.AbrirBanco());
+                comando = new MySqlCommand("select codFuncionario as 'Id Funcionario',  nomeFuncionario as 'Nome' , enderecoFuncionario as 'Endereço', numeroFuncionario as 'Numero'  ,loginFuncionario as 'Login', senhaFuncionario as 'senha', cpfFuncionario as 'CPF', cargoFuncionario as 'Cargo', telefoneFuncionario as 'Telefone' from Funcionario where codFuncionario LIKE'%'  @codFuncionario '%' ORDER BY codFuncionario", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@codFuncionario", codigo);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -333,7 +333,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 
@@ -343,15 +343,15 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarCpf(string cpf)
+        public DataTable PesquisarCpf(string cpf)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from cliente where cpf_cliente LIKE'%'  @cpf_cliente '%' ORDER BY cpf_cliente", conexao.AbrirBanco());
-                comando.Parameters.AddWithValue("@cpf_cliente", cpf);
+                comando = new MySqlCommand("select codFuncionario as 'Id Funcionario',  nomeFuncionario as 'Nome' , enderecoFuncionario as 'Endereço', numeroFuncionario as 'Numero'  ,loginFuncionario as 'Login', senhaFuncionario as 'senha', cpfFuncionario as 'CPF', cargoFuncionario as 'Cargo', telefoneFuncionario as 'Telefone' from Funcionario where cpfFuncionario LIKE'%'  @cpf '%' ORDER BY cpfFuncionario", conexao.AbrirBanco());
+                comando.Parameters.AddWithValue("@cpf", cpf);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
 
@@ -359,7 +359,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 
@@ -369,14 +369,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarNome(string nome)
+        public DataTable PesquisarNome(string nome)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Funcionario where nomeFuncionario LIKE'%'  @nomeFuncionario '%' ORDER BY nomeFuncionario", conexao.AbrirBanco());
+                comando = new MySqlCommand("select codFuncionario as 'Id Funcionario',  nomeFuncionario as 'Nome' , enderecoFuncionario as 'Endereço', numeroFuncionario as 'Numero'  ,loginFuncionario as 'Login', senhaFuncionario as 'senha', cpfFuncionario as 'CPF', cargoFuncionario as 'Cargo', telefoneFuncionario as 'Telefone' from Funcionario Funcionario where nomeFuncionario LIKE'%'  @nomeFuncionario '%' ORDER BY nomeFuncionario", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@nomeFuncionario", nome);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -385,7 +385,34 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
+
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        } 
+        public DataTable PesquisarCargo(string cargo)
+        {
+
+            try
+            {
+
+
+                comando = new MySqlCommand("select codFuncionario as 'Id Funcionario',  nomeFuncionario as 'Nome' , enderecoFuncionario as 'Endereço', numeroFuncionario as 'Numero'  ,loginFuncionario as 'Login', senhaFuncionario as 'senha', cpfFuncionario as 'CPF', cargoFuncionario as 'Cargo', telefoneFuncionario as 'Telefone' from Funcionario Funcionario where cargoFuncionario LIKE'%'  @cargo '%' ORDER BY cargoFuncionario", conexao.AbrirBanco());
+                comando.Parameters.AddWithValue("@cargo", cargo);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(comando);
+
+                DataTable dtLista = new DataTable();
+
+
+                da.Fill(dtLista);
+                return dtLista;
 
 
 
@@ -396,5 +423,6 @@ namespace PizzariaWinForm
             }
 
         }
+
     }
 }

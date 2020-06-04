@@ -139,11 +139,13 @@
             // 
             // txtPreco
             // 
+            this.txtPreco.Enabled = false;
             this.txtPreco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             this.txtPreco.Location = new System.Drawing.Point(179, 169);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(101, 27);
             this.txtPreco.TabIndex = 28;
+            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
             this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
             // 
             // label2
@@ -159,6 +161,7 @@
             // 
             // txtTipo
             // 
+            this.txtTipo.Enabled = false;
             this.txtTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             this.txtTipo.Location = new System.Drawing.Point(399, 172);
             this.txtTipo.Name = "txtTipo";
@@ -179,11 +182,13 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             this.txtTotal.Location = new System.Drawing.Point(374, 226);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(132, 27);
             this.txtTotal.TabIndex = 32;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
             // label5

@@ -169,7 +169,7 @@ namespace PizzariaWinForm
         public DataTable Listar()
 
         {
-            string strSql = "select descricaoProduto as 'Descrição', precoProduto as 'Preço', porcentagemProduto as 'Porcentagem', precoVendaProduto as 'Preço Venda', categoriaProduto as 'Categoria' , quantidadeProduto ' Quantidade ' , fornecedor as Fornecedor from Produto";
+            string strSql = "select idProduto as 'ID', descricaoProduto as 'Descrição', precoProduto as 'Preço', porcentagemProduto as 'Porcentagem', precoVendaProduto as 'Preço Venda', categoriaProduto as 'Categoria' , quantidadeProduto ' Quantidade ' , fornecedor as Fornecedor from Produto";
 
 
             try
@@ -190,14 +190,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarCodigo(string codigo)
+        public DataTable PesquisarCodigo(string codigo)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Produto where idProduto LIKE'%'  @id_produto '%' ORDER BY idProduto", conexao.AbrirBanco());
+                comando = new MySqlCommand("select idProduto as 'ID', descricaoProduto as 'Descrição', precoProduto as 'Preço', porcentagemProduto as 'Porcentagem', precoVendaProduto as 'Preço Venda', categoriaProduto as 'Categoria' , quantidadeProduto ' Quantidade ' , fornecedor as Fornecedor from Produto where idProduto LIKE'%'  @id_produto '%' ORDER BY idProduto", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@id_produto", codigo);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -206,7 +206,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 
@@ -216,14 +216,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarFornecedor(string fornecedor)
+        public DataTable PesquisarFornecedor(string fornecedor)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Produto where fornecedor LIKE'%'  @fornecedor '%' ORDER BY fornecedor", conexao.AbrirBanco());
+                comando = new MySqlCommand("select idProduto as 'ID', descricaoProduto as 'Descrição', precoProduto as 'Preço', porcentagemProduto as 'Porcentagem', precoVendaProduto as 'Preço Venda', categoriaProduto as 'Categoria' , quantidadeProduto ' Quantidade ' , fornecedor as Fornecedor from Produto where fornecedor LIKE'%'  @fornecedor '%' ORDER BY fornecedor", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@fornecedor", fornecedor);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -232,7 +232,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 
@@ -242,14 +242,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarCategoria(string categoria)
+        public DataTable PesquisarCategoria(string categoria)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Produto where categoriaProduto LIKE'%'  @categoria '%' ORDER BY categoriaProduto", conexao.AbrirBanco());
+                comando = new MySqlCommand("select idProduto as 'ID', descricaoProduto as 'Descrição', precoProduto as 'Preço', porcentagemProduto as 'Porcentagem', precoVendaProduto as 'Preço Venda', categoriaProduto as 'Categoria' , quantidadeProduto ' Quantidade ' , fornecedor as Fornecedor from Produto where categoriaProduto LIKE'%'  @categoria '%' ORDER BY categoriaProduto", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@categoria", categoria);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -258,7 +258,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 
@@ -268,14 +268,15 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarNome(string nome)
+        public DataTable PesquisarNome(string nome)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Produto where descricaoProduto LIKE'%'  @descricao '%' ORDER BY descricaoProduto", conexao.AbrirBanco());
+                comando = new MySqlCommand("select idProduto as 'ID'," +
+                    " descricaoProduto as 'Descrição', precoProduto as 'Preço', porcentagemProduto as 'Porcentagem', precoVendaProduto as 'Preço Venda', categoriaProduto as 'Categoria' , quantidadeProduto ' Quantidade ' , fornecedor as Fornecedor from Produto where descricaoProduto LIKE'%'  @descricao '%' ORDER BY descricaoProduto", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@descricao", nome);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -284,7 +285,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 

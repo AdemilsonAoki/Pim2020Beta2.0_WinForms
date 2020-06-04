@@ -54,22 +54,19 @@ namespace PizzariaWinForm.ControlesDeUsuario
             if (cmbConsultaCliente.Text == "Código Cliente")
             {
                 cliente.Id = int.Parse( txtConsultaCliente.Text.Trim());
-                cliente.Dados = dgvCliente;
-                cliente.PesquisarCodigo((txtConsultaCliente.Text));
+                dgvCliente.DataSource =  cliente.PesquisarCodigo((txtConsultaCliente.Text));
             }
             if (cmbConsultaCliente.Text == "Nome")
             {
                 cliente.Nome = txtConsultaCliente.Text.Trim();
-                cliente.Dados = dgvCliente;
-
-                cliente.PesquisarNome(txtConsultaCliente.Text);
+                 dgvCliente.DataSource = cliente.PesquisarNome(txtConsultaCliente.Text);
             }
             if (cmbConsultaCliente.Text == "Cpf")
             {
                 cliente.CPF = dgvCliente.Text.Trim();
-                cliente.Dados = dgvCliente;
+               
+                dgvCliente.DataSource = cliente.PesquisarCpf(txtConsultaCliente.Text);
 
-                cliente.PesquisarCpf(txtConsultaCliente.Text);
             }
 
         }

@@ -15,9 +15,9 @@ namespace PizzariaWinForm.ControlesDeUsuario
         public CU_Produto()
         {
             InitializeComponent();
-            
+
         }
-     
+
         private void btnAdicionarFornecedor_Click(object sender, EventArgs e)
         {
             using (Formularios.frmVendas ab = new Formularios.frmVendas())
@@ -36,7 +36,7 @@ namespace PizzariaWinForm.ControlesDeUsuario
 
         private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+
         }
 
         private void btnAtulizar_Click(object sender, EventArgs e)
@@ -51,29 +51,23 @@ namespace PizzariaWinForm.ControlesDeUsuario
             if (cmbConsultaProduto.Text == "Código Produto")
             {
                 produto.Id = int.Parse(txtConsultaProduto.Text.Trim());
-                produto.Dados = dgvProduto;
-                produto.PesquisarCodigo((txtConsultaProduto.Text));
+
+                dgvProduto.DataSource = produto.PesquisarCodigo((txtConsultaProduto.Text));
             }
             if (cmbConsultaProduto.Text == "Descricao")
             {
                 produto.Descricao = txtConsultaProduto.Text.Trim();
-                produto.Dados = dgvProduto;
-
-                produto.PesquisarNome(txtConsultaProduto.Text);
+                dgvProduto.DataSource = produto.PesquisarNome(txtConsultaProduto.Text);
             }
             if (cmbConsultaProduto.Text == "Categoria")
             {
                 produto.Fabricante = dgvProduto.Text.Trim();
-                produto.Dados = dgvProduto;
-
-                produto.PesquisarCategoria(txtConsultaProduto.Text);
-            } 
+                dgvProduto.DataSource = produto.PesquisarCategoria(txtConsultaProduto.Text);
+            }
             if (cmbConsultaProduto.Text == "Fornecedor")
             {
                 produto.Fabricante = dgvProduto.Text.Trim();
-                produto.Dados = dgvProduto;
-
-                produto.PesquisarFornecedor(txtConsultaProduto.Text);
+                dgvProduto.DataSource =  produto.PesquisarFornecedor(txtConsultaProduto.Text);
             }
 
         }

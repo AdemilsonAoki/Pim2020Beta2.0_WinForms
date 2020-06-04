@@ -36,9 +36,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAtulizar = new System.Windows.Forms.Button();
-            this.txtConsultaFornecedor = new System.Windows.Forms.TextBox();
+            this.txtConsultaFuncionario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbConsultaFornecedor = new System.Windows.Forms.ComboBox();
+            this.cmbConsultaFuncionario = new System.Windows.Forms.ComboBox();
             this.btnAdicionarFuncionario = new System.Windows.Forms.Button();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
@@ -99,9 +99,9 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             this.panel5.Controls.Add(this.btnAtulizar);
-            this.panel5.Controls.Add(this.txtConsultaFornecedor);
+            this.panel5.Controls.Add(this.txtConsultaFuncionario);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.cmbConsultaFornecedor);
+            this.panel5.Controls.Add(this.cmbConsultaFuncionario);
             this.panel5.Controls.Add(this.btnAdicionarFuncionario);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,13 +129,15 @@
             this.btnAtulizar.UseVisualStyleBackColor = false;
             this.btnAtulizar.Click += new System.EventHandler(this.btnAtulizar_Click_1);
             // 
-            // txtConsultaFornecedor
+            // txtConsultaFuncionario
             // 
-            this.txtConsultaFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsultaFornecedor.Location = new System.Drawing.Point(869, 30);
-            this.txtConsultaFornecedor.Name = "txtConsultaFornecedor";
-            this.txtConsultaFornecedor.Size = new System.Drawing.Size(218, 27);
-            this.txtConsultaFornecedor.TabIndex = 8;
+            this.txtConsultaFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConsultaFuncionario.Location = new System.Drawing.Point(869, 30);
+            this.txtConsultaFuncionario.Name = "txtConsultaFuncionario";
+            this.txtConsultaFuncionario.Size = new System.Drawing.Size(218, 27);
+            this.txtConsultaFuncionario.TabIndex = 8;
+            this.txtConsultaFuncionario.TextChanged += new System.EventHandler(this.txtConsultaFuncionario_TextChanged);
+            this.txtConsultaFuncionario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultaFuncionario_KeyPress);
             // 
             // label5
             // 
@@ -149,19 +151,21 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Procure Por :";
             // 
-            // cmbConsultaFornecedor
+            // cmbConsultaFuncionario
             // 
-            this.cmbConsultaFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbConsultaFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbConsultaFornecedor.FormattingEnabled = true;
-            this.cmbConsultaFornecedor.Items.AddRange(new object[] {
-            "Razão Social",
-            "CNPJ",
-            "Nome Fantasia"});
-            this.cmbConsultaFornecedor.Location = new System.Drawing.Point(707, 30);
-            this.cmbConsultaFornecedor.Name = "cmbConsultaFornecedor";
-            this.cmbConsultaFornecedor.Size = new System.Drawing.Size(156, 27);
-            this.cmbConsultaFornecedor.TabIndex = 2;
+            this.cmbConsultaFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbConsultaFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbConsultaFuncionario.FormattingEnabled = true;
+            this.cmbConsultaFuncionario.Items.AddRange(new object[] {
+            "ID",
+            "Nome",
+            "Cpf",
+            "Cargo"});
+            this.cmbConsultaFuncionario.Location = new System.Drawing.Point(707, 30);
+            this.cmbConsultaFuncionario.Name = "cmbConsultaFuncionario";
+            this.cmbConsultaFuncionario.Size = new System.Drawing.Size(156, 27);
+            this.cmbConsultaFuncionario.TabIndex = 2;
+            this.cmbConsultaFuncionario.SelectedIndexChanged += new System.EventHandler(this.cmbConsultaFuncionario_SelectedIndexChanged);
             // 
             // btnAdicionarFuncionario
             // 
@@ -231,9 +235,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAtulizar;
-        private System.Windows.Forms.TextBox txtConsultaFornecedor;
+        private System.Windows.Forms.TextBox txtConsultaFuncionario;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbConsultaFornecedor;
+        private System.Windows.Forms.ComboBox cmbConsultaFuncionario;
         private System.Windows.Forms.Button btnAdicionarFuncionario;
         private System.Windows.Forms.DataGridView dgvFuncionario;
     }

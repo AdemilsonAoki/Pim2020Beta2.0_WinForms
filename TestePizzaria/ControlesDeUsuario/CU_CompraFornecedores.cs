@@ -40,12 +40,12 @@ namespace PizzariaWinForm.ControlesDeUsuario
             Fornecedor fornecedor = new Fornecedor();
             int b1 = 0;
             dgvFornecedor.DataSource = fornecedor.Listar();
-          
+
         }
 
         private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
         private void Pesquisa()
@@ -54,25 +54,19 @@ namespace PizzariaWinForm.ControlesDeUsuario
             {
                 Fornecedor fornecedor = new Fornecedor();
                 fornecedor.Nome = txtConsultaFornecedor.Text.Trim();
-                fornecedor.Dados = dgvFornecedor;
-
-                fornecedor.PesquisarNome(txtConsultaFornecedor.Text);
+                dgvFornecedor.DataSource = fornecedor.PesquisarNome(txtConsultaFornecedor.Text);
             }
             if (cmbConsultaFornecedor.Text == "Razão Social")
             {
                 Fornecedor fornecedor = new Fornecedor();
                 fornecedor.Nome = txtConsultaFornecedor.Text.Trim();
-                fornecedor.Dados = dgvFornecedor;
-
-                fornecedor.PesquisarRazaoSocial(txtConsultaFornecedor.Text);
+                dgvFornecedor.DataSource = fornecedor.PesquisarRazaoSocial(txtConsultaFornecedor.Text);
             }
             if (cmbConsultaFornecedor.Text == "CNPJ")
             {
                 Fornecedor fornecedor = new Fornecedor();
                 fornecedor.Nome = txtConsultaFornecedor.Text.Trim();
-                fornecedor.Dados = dgvFornecedor;
-
-                fornecedor.PesquisarCnpj(txtConsultaFornecedor.Text);
+                dgvFornecedor.DataSource = fornecedor.PesquisarCnpj(txtConsultaFornecedor.Text);
             }
 
         }
@@ -80,7 +74,7 @@ namespace PizzariaWinForm.ControlesDeUsuario
 
         private void cmbConsultaFornecedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            txtConsultaFornecedor.Clear();
         }
 
         private void txtConsultaFornecedor_TextChanged(object sender, EventArgs e)

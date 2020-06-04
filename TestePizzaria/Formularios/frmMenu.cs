@@ -23,21 +23,14 @@ namespace PizzariaWinForm
         }
 
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+     
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -121,12 +114,7 @@ namespace PizzariaWinForm
             AddControlsToPanel(ula);
         }
 
-        private void btnRelatorios_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(btnRelatorios);
-            ControlesDeUsuario.CU_Gastos upa = new ControlesDeUsuario.CU_Gastos();
-            AddControlsToPanel(upa);
-        }
+     
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
@@ -155,25 +143,7 @@ namespace PizzariaWinForm
 
         }
 
-        private void labelTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -182,15 +152,7 @@ namespace PizzariaWinForm
             AddControlsToPanel(usc);
         }
 
-        private void panel3_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelTime_Click_1(object sender, EventArgs e)
-        {
-
-        }
+   
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -202,10 +164,7 @@ namespace PizzariaWinForm
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+      
 
         private void btnCadastrarFunc_Click(object sender, EventArgs e)
         {
@@ -215,30 +174,15 @@ namespace PizzariaWinForm
 
         }
 
-        private void btnSair_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-            frmLogin login = new frmLogin();
-            login.Show();
-
-        }
-
+        
         private void lblData_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
+      
 
-
-
-        }
-
-        private void panelControls_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
@@ -264,21 +208,32 @@ namespace PizzariaWinForm
             lblNomeUsuario.Text = nome;
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+      
+
+       
+
+      
+
+        private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
             frmLogin login = new frmLogin();
             login.Show();
-            
         }
 
-        private void btnRelatorio_Click(object sender, EventArgs e)
+        private void btnRelatorio_Click_1(object sender, EventArgs e)
         {
             moveSidePanel(btnRelatorio);
             ControlesDeUsuario.CU_Relatorios usb = new ControlesDeUsuario.CU_Relatorios();
-           
-            AddControlsToPanel(usb);
 
+            AddControlsToPanel(usb);
+        }
+
+        private void btnSair_Click_3(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin login = new frmLogin();
+            login.Show();
         }
     }
 }

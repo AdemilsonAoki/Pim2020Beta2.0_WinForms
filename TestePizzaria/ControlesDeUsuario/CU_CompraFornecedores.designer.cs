@@ -39,7 +39,6 @@
             this.txtConsultaFornecedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbConsultaFornecedor = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnAdicionarFornecedor = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
@@ -105,7 +104,6 @@
             this.panel5.Controls.Add(this.txtConsultaFornecedor);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.cmbConsultaFornecedor);
-            this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.btnAdicionarFornecedor);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,7 +122,7 @@
             this.btnAtulizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtulizar.ForeColor = System.Drawing.Color.White;
             this.btnAtulizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtulizar.Image")));
-            this.btnAtulizar.Location = new System.Drawing.Point(374, 0);
+            this.btnAtulizar.Location = new System.Drawing.Point(187, 0);
             this.btnAtulizar.Name = "btnAtulizar";
             this.btnAtulizar.Size = new System.Drawing.Size(187, 85);
             this.btnAtulizar.TabIndex = 13;
@@ -169,25 +167,6 @@
             this.cmbConsultaFornecedor.Size = new System.Drawing.Size(156, 27);
             this.cmbConsultaFornecedor.TabIndex = 2;
             this.cmbConsultaFornecedor.SelectedIndexChanged += new System.EventHandler(this.cmbConsultaFornecedor_SelectedIndexChanged);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(187, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 85);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Add Estoque";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAdicionarFornecedor
             // 
@@ -267,7 +246,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cmbConsultaFornecedor;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAdicionarFornecedor;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;

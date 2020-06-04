@@ -65,7 +65,7 @@ namespace PizzariaWinForm
         }
 
 
-        bool cad = false;
+     
         public void Cadastrar()
         {
             string strSql = "INSERT INTO Cliente (nomeCliente, enderecoCliente, numeroCliente ,telefoneCliente, cpfCliente) " +
@@ -76,12 +76,12 @@ namespace PizzariaWinForm
 
                 comando = new MySqlCommand(strSql, conexao.AbrirBanco());
                 comando.ExecuteNonQuery();
-                cad = true;
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                cad = false;
+              
             }
             finally
             {
@@ -149,14 +149,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarCodigo(string codigo)
+        public DataTable PesquisarCodigo(string codigo)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Cliente where idCliente LIKE'%'  @cod_cliente '%' ORDER BY idCliente", conexao.AbrirBanco());
+                comando = new MySqlCommand("select idCliente as 'Id Cliente', nomeCliente as Nome, enderecoCliente as 'Endereço', numeroCliente as Numero, telefoneCliente as Telefone, cpfCliente as CPF from Cliente where idCliente LIKE'%'  @cod_cliente '%' ORDER BY idCliente", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@cod_cliente", codigo);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -165,7 +165,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 
@@ -185,7 +185,7 @@ namespace PizzariaWinForm
 
                 comando = new MySqlCommand(vericadora, conexao.AbrirBanco());
                 var resultado = comando.ExecuteScalar();
-                if (resultado != null)
+                if (resultado.ToString() != "0")
                 {
                     return true;
                 }
@@ -207,14 +207,14 @@ namespace PizzariaWinForm
 
 
         }
-        public void PesquisarCpf(string cpf)
+        public DataTable PesquisarCpf(string cpf)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Cliente where cpfCliente LIKE'%'  @cpf_cliente '%' ORDER BY cpfCliente", conexao.AbrirBanco());
+                comando = new MySqlCommand("select idCliente as 'Id Cliente', nomeCliente as Nome, enderecoCliente as 'Endereço', numeroCliente as Numero, telefoneCliente as Telefone, cpfCliente as CPF from Cliente where cpfCliente LIKE'%'  @cpf_cliente '%' ORDER BY cpfCliente", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@cpf_cliente", cpf);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -223,7 +223,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 
@@ -233,14 +233,14 @@ namespace PizzariaWinForm
                 throw;
             }
         }
-        public void PesquisarNome(string nome)
+        public DataTable PesquisarNome(string nome)
         {
 
             try
             {
 
 
-                comando = new MySqlCommand("select *from Cliente where nomeCliente LIKE'%'  @nome_cliente '%' ORDER BY nomeCliente", conexao.AbrirBanco());
+                comando = new MySqlCommand("select idCliente as 'Id Cliente', nomeCliente as Nome, enderecoCliente as 'Endereço', numeroCliente as Numero, telefoneCliente as Telefone, cpfCliente as CPF from Cliente where nomeCliente LIKE'%'  @nome_cliente '%' ORDER BY nomeCliente", conexao.AbrirBanco());
                 comando.Parameters.AddWithValue("@nome_cliente", nome);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(comando);
@@ -249,7 +249,7 @@ namespace PizzariaWinForm
 
 
                 da.Fill(dtLista);
-                dados.DataSource = dtLista;
+                return dtLista;
 
 
 

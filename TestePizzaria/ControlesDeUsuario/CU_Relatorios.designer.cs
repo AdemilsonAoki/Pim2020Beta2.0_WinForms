@@ -180,6 +180,7 @@
             this.dgvRelatorio.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvRelatorio.Location = new System.Drawing.Point(10, 371);
             this.dgvRelatorio.Name = "dgvRelatorio";
+            this.dgvRelatorio.ReadOnly = true;
             this.dgvRelatorio.Size = new System.Drawing.Size(1095, 220);
             this.dgvRelatorio.TabIndex = 17;
             // 
@@ -191,6 +192,7 @@
             this.dgvRelatorioCancelados.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvRelatorioCancelados.Location = new System.Drawing.Point(10, 52);
             this.dgvRelatorioCancelados.Name = "dgvRelatorioCancelados";
+            this.dgvRelatorioCancelados.ReadOnly = true;
             this.dgvRelatorioCancelados.Size = new System.Drawing.Size(1095, 230);
             this.dgvRelatorioCancelados.TabIndex = 18;
             // 

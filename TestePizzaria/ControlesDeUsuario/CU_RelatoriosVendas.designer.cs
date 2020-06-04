@@ -171,7 +171,6 @@
             this.cmbConsultaVenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConsultaVenda.FormattingEnabled = true;
             this.cmbConsultaVenda.Items.AddRange(new object[] {
-            "Nome Cliente",
             "Id Venda"});
             this.cmbConsultaVenda.Location = new System.Drawing.Point(503, 40);
             this.cmbConsultaVenda.Name = "cmbConsultaVenda";

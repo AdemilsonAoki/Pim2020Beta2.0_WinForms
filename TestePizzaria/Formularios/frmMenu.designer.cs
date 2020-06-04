@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.painelEsquerda = new System.Windows.Forms.Panel();
             this.btnRelatorio = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnCadastrarFunc = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,10 +43,9 @@
             this.btnFornecedores = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnCardapio = new System.Windows.Forms.Button();
-            this.btnRelatorios = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTempo = new System.Windows.Forms.Timer(this.components);
@@ -68,7 +67,7 @@
             // 
             this.painelEsquerda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.painelEsquerda.Controls.Add(this.btnRelatorio);
-            this.painelEsquerda.Controls.Add(this.button3);
+            this.painelEsquerda.Controls.Add(this.btnSair);
             this.painelEsquerda.Controls.Add(this.btnCadastrarFunc);
             this.painelEsquerda.Controls.Add(this.btnHome);
             this.painelEsquerda.Controls.Add(this.button1);
@@ -79,7 +78,6 @@
             this.painelEsquerda.Controls.Add(this.btnFornecedores);
             this.painelEsquerda.Controls.Add(this.btnClientes);
             this.painelEsquerda.Controls.Add(this.btnCardapio);
-            this.painelEsquerda.Controls.Add(this.btnRelatorios);
             this.painelEsquerda.Controls.Add(this.btnVendas);
             this.painelEsquerda.Dock = System.Windows.Forms.DockStyle.Left;
             this.painelEsquerda.Location = new System.Drawing.Point(0, 0);
@@ -96,30 +94,30 @@
             this.btnRelatorio.ForeColor = System.Drawing.Color.White;
             this.btnRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.Image")));
             this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorio.Location = new System.Drawing.Point(3, 562);
+            this.btnRelatorio.Location = new System.Drawing.Point(12, 502);
             this.btnRelatorio.Name = "btnRelatorio";
             this.btnRelatorio.Size = new System.Drawing.Size(188, 54);
             this.btnRelatorio.TabIndex = 23;
             this.btnRelatorio.Text = "      Relatório";
             this.btnRelatorio.UseVisualStyleBackColor = true;
-            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
+            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click_1);
             // 
-            // button3
+            // btnSair
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 622);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 54);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "    Sair";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(12, 562);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(188, 54);
+            this.btnSair.TabIndex = 22;
+            this.btnSair.Text = "    Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_3);
             // 
             // btnCadastrarFunc
             // 
@@ -130,7 +128,7 @@
             this.btnCadastrarFunc.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarFunc.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarFunc.Image")));
             this.btnCadastrarFunc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrarFunc.Location = new System.Drawing.Point(12, 502);
+            this.btnCadastrarFunc.Location = new System.Drawing.Point(12, 442);
             this.btnCadastrarFunc.Name = "btnCadastrarFunc";
             this.btnCadastrarFunc.Size = new System.Drawing.Size(188, 54);
             this.btnCadastrarFunc.TabIndex = 21;
@@ -222,7 +220,7 @@
             this.btnFornecedores.ForeColor = System.Drawing.Color.White;
             this.btnFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedores.Image")));
             this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFornecedores.Location = new System.Drawing.Point(12, 442);
+            this.btnFornecedores.Location = new System.Drawing.Point(12, 382);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(188, 54);
             this.btnFornecedores.TabIndex = 11;
@@ -239,7 +237,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(12, 382);
+            this.btnClientes.Location = new System.Drawing.Point(12, 322);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(188, 54);
             this.btnClientes.TabIndex = 10;
@@ -264,23 +262,6 @@
             this.btnCardapio.UseVisualStyleBackColor = true;
             this.btnCardapio.Click += new System.EventHandler(this.btnCardapio_Click);
             // 
-            // btnRelatorios
-            // 
-            this.btnRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRelatorios.FlatAppearance.BorderSize = 0;
-            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorios.ForeColor = System.Drawing.Color.White;
-            this.btnRelatorios.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorios.Image")));
-            this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorios.Location = new System.Drawing.Point(12, 322);
-            this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(188, 54);
-            this.btnRelatorios.TabIndex = 5;
-            this.btnRelatorios.Text = "     Gastos";
-            this.btnRelatorios.UseVisualStyleBackColor = true;
-            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
-            // 
             // btnVendas
             // 
             this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -301,7 +282,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.btnFechar);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(200, 0);
@@ -309,23 +290,23 @@
             this.panel5.Size = new System.Drawing.Size(1115, 48);
             this.panel5.TabIndex = 16;
             // 
-            // button2
+            // btnFechar
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(1073, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 48);
-            this.button2.TabIndex = 13;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.Color.White;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.Location = new System.Drawing.Point(1073, 0);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(42, 48);
+            this.btnFechar.TabIndex = 13;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // label1
             // 
@@ -398,7 +379,6 @@
             this.lblNomeUsuario.Size = new System.Drawing.Size(137, 23);
             this.lblNomeUsuario.TabIndex = 10;
             this.lblNomeUsuario.Text = "Nome usuario";
-            this.lblNomeUsuario.Click += new System.EventHandler(this.label5_Click);
             // 
             // labelUsuario
             // 
@@ -482,7 +462,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCardapio;
-        private System.Windows.Forms.Button btnRelatorios;
         private System.Windows.Forms.Button btnVendas;
         private System.Windows.Forms.Panel panelSide;
         private System.Windows.Forms.Button btnFornecedores;
@@ -490,7 +469,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerTempo;
         private System.Windows.Forms.Button btnHome;
@@ -503,7 +482,7 @@
         private System.Windows.Forms.Button btnCadastrarFunc;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Panel panelControls;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnRelatorio;
     }
 }

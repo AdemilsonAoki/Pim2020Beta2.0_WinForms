@@ -23,16 +23,16 @@ namespace PizzariaWinForm.ControlesDeUsuario
             dgvFuncionario.DataSource = funcionario.Listar();
         }
 
-      
-      
 
-       
+
+
+
         private void dgvFuncionario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
-        
+
         private void btnAdicionarFuncionario_Click_1(object sender, EventArgs e)
         {
             Formularios.frmAddFuncionario addFuncionario = new Formularios.frmAddFuncionario();
@@ -76,6 +76,61 @@ namespace PizzariaWinForm.ControlesDeUsuario
                 abn.ShowDialog();
 
             }
+        }
+        private void Pesquisa()
+        {
+            if (cmbConsultaFuncionario.Text == "ID")
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.CodFuncionario = int.Parse(txtConsultaFuncionario.Text.Trim());
+                dgvFuncionario.DataSource = funcionario.PesquisarCodigo(txtConsultaFuncionario.Text);
+            }
+            if (cmbConsultaFuncionario.Text == "Nome")
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.NomeFuncionario = txtConsultaFuncionario.Text.Trim();
+                dgvFuncionario.DataSource = funcionario.PesquisarNome(txtConsultaFuncionario.Text);
+            }
+            if (cmbConsultaFuncionario.Text == "Cpf")
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.CpfFuncionario = txtConsultaFuncionario.Text.Trim();
+                dgvFuncionario.DataSource = funcionario.PesquisarCpf(txtConsultaFuncionario.Text);
+            }
+            if (cmbConsultaFuncionario.Text == "Cargo")
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.CargoFuncionario = txtConsultaFuncionario.Text.Trim();
+                dgvFuncionario.DataSource = funcionario.PesquisarCargo(txtConsultaFuncionario.Text);
+            }
+        }
+
+        private void txtConsultaFuncionario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtConsultaFuncionario.Text == "")
+            {
+                Funcionario funcionario = new Funcionario();
+                dgvFuncionario.DataSource = funcionario.Listar();
+            }
+            else
+            {
+
+                Pesquisa();
+            }
+        }
+
+        private void txtConsultaFuncionario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cmbConsultaFuncionario.Text == "ID")
+            {
+                if ((Char.IsLetter(e.KeyChar)))
+                    e.Handled = true;
+            }
+        }
+
+        private void cmbConsultaFuncionario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtConsultaFuncionario.Clear();
         }
     }
 }

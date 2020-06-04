@@ -347,5 +347,15 @@ namespace PizzariaWinForm.Formularios
         {
             lblData.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
+
+        private void txtPreco_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
