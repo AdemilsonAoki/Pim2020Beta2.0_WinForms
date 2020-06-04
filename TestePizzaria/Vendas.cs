@@ -143,29 +143,53 @@ namespace PizzariaWinForm
         }
 
       
-        public void CadastrarProdutoVendido()
+        public bool CadastrarProdutoVendido()
         {
             string strSql = "INSERT INTO ProdutoVenda(idVenda, idProduto, qtProdutoVenda, tipoProdutoVenda , totalProdutoVenda) " +
-                    "VALUES ('" + idVenda + "','" + produto + "','" + quantidade + "','" + tipoPizza + "','" + total.ToString(CultureInfo.InvariantCulture) + "')";
-
-            try
+                   "VALUES ('" + idVenda + "','" + produto + "','" + quantidade + "','" + tipoPizza + "','" + total.ToString(CultureInfo.InvariantCulture) + "')";
+            string strPtext = "select *from Produto where idProduto='" + produto + "'";
+            comando = new MySqlCommand(strPtext, conexao.AbrirBanco());
+            comando.ExecuteNonQuery();
+            MySqlDataReader dr;
+            dr = comando.ExecuteReader();
+            while (dr.Read())
             {
+                string quantia = (string)dr["quantidadeProduto"].ToString();
+                int temp = int.Parse(quantia);
 
-                comando = new MySqlCommand(strSql, conexao.AbrirBanco());
-                comando.ExecuteNonQuery();
+                if(quantidade > temp)
+                {
+                    return false;
+                }
+                else
+                {
+                    try
+                    {
+
+                        comando = new MySqlCommand(strSql, conexao.AbrirBanco());
+                        comando.ExecuteNonQuery();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                       
+
+                    }
+                    finally
+                    {
+                        conexao.FecharBanco(conexao.AbrirBanco());
+                        // conexao = null;
+                        // comando = null;
+                    }
+                    return true;
+                }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
 
-            }
-            finally
-            {
-                conexao.FecharBanco(conexao.AbrirBanco());
-                // conexao = null;
-                // comando = null;
-            }
+
+
+            return true;
 
 
         }

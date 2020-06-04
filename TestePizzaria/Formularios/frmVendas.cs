@@ -178,7 +178,15 @@ namespace PizzariaWinForm.Formularios
                     }
                     vendas.IdVenda = int.Parse(txtId.Text);
 
-                    vendas.CadastrarProdutoVendido();
+                    if (vendas.CadastrarProdutoVendido() == true)
+                    {
+                        MessageBox.Show("adicionado ao carrinho!", MessageBoxButtons.OK.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não há estoque suficiente ao carrinho!", MessageBoxButtons.OK.ToString());
+                    }
+                    
                     vendas.RetirarEstoque();
 
                     if (lblTotal.Text != "")
@@ -196,7 +204,7 @@ namespace PizzariaWinForm.Formularios
 
                     dgvVendas.DataSource = vendas.ListarCarrinho();
 
-                    var result = MessageBox.Show("Cadastrado com sucesso!", MessageBoxButtons.OK.ToString());
+                  
 
                 }
 
@@ -307,6 +315,7 @@ namespace PizzariaWinForm.Formularios
         {
             vendas.TotalVendas = float.Parse(lblTotal.Text);
             vendas.AtualizaTotal();
+            MessageBox.Show("Venda Cadastrada com sucesso!", MessageBoxButtons.OK.ToString());
             this.Close();
         }
 
