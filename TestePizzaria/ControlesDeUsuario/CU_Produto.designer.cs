@@ -34,7 +34,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.txtConsultaProduto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -95,15 +94,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 657);
             this.panel1.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(10, 95);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1095, 10);
-            this.panel5.TabIndex = 13;
             // 
             // dgvProduto
             // 
@@ -215,7 +205,6 @@
             // CU_Produto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.dgvProduto);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -242,7 +231,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvProduto;
         private System.Windows.Forms.TextBox txtConsultaProduto;
         private System.Windows.Forms.Label label5;
