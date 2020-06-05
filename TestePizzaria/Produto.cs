@@ -92,7 +92,7 @@ namespace PizzariaWinForm
             {
 
                 string strSql = "INSERT INTO Produto (descricaoProduto, precoProduto, porcentagemProduto, precoVendaProduto, categoriaProduto, quantidadeProduto, fornecedor) " +
-                "VALUES ('" + descricao + "','" + preco.ToString(CultureInfo.InvariantCulture) + "','" + porcentagem + "' , '" + precoVenda.ToString(CultureInfo.InvariantCulture) + "', '" + categoria + "', '" + quantidade + "', '" + fabricante + "')";
+                "VALUES ('" + descricao + "','" + preco.ToString("F2",CultureInfo.InvariantCulture) + "','" + porcentagem + "' , '" + precoVenda.ToString("F2", CultureInfo.InvariantCulture) + "', '" + categoria + "', '" + quantidade + "', '" + fabricante + "')";
                 comando = new MySqlCommand(strSql, conexao.AbrirBanco());
                 comando.ExecuteNonQuery();
 

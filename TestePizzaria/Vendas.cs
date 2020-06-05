@@ -422,7 +422,7 @@ namespace PizzariaWinForm
         public void AtualizaTotal()
         {
             idProdutoVendido = idVenda;
-            string strSql = "UPDATE Venda SET totalVenda='" + totalVendas.ToString(CultureInfo.InvariantCulture) +
+            string strSql = "UPDATE Venda SET totalVenda='" + totalVendas.ToString("F2",CultureInfo.InvariantCulture) +
                  "' where idVenda= '" + idVenda + "'";
 
 
