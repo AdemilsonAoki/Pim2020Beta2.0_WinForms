@@ -132,7 +132,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(310, 274);
             this.pictureBox2.Name = "pictureBox2";
