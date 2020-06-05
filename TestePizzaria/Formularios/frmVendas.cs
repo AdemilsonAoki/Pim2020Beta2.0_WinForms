@@ -238,8 +238,20 @@ namespace PizzariaWinForm.Formularios
 
                 total = (quantidade * preco) * 0.9f;
             }
-            else
+            if(rbInteira.Checked == true)
             {
+                vendas.PreencherText(cmbProduto, txtPreco, txtTipo);
+                if (txtQuantidade.Text != "")
+                {
+                    quantidade = float.Parse(txtQuantidade.Text);
+                }
+                if (txtPreco.Text != "")
+                {
+
+                    preco = float.Parse(txtPreco.Text);
+                }
+
+
                 total = quantidade * preco;
 
             }
@@ -263,23 +275,30 @@ namespace PizzariaWinForm.Formularios
 
         private void rbInteira_CheckedChanged(object sender, EventArgs e)
         {
+            
+            
             float quantidade = 0;
             float total = 0;
-
-
             float preco = 0;
-            if (txtQuantidade.Text != "")
+
+            if (rbInteira.Checked == true && txtTotal.Text != "")
             {
-                quantidade = float.Parse(txtQuantidade.Text);
+                vendas.PreencherText(cmbProduto, txtPreco, txtTipo);
+                if (txtQuantidade.Text != "")
+                {
+                    quantidade = float.Parse(txtQuantidade.Text);
+                }
+                if (txtPreco.Text != "")
+                {
+
+                    preco = float.Parse(txtPreco.Text);
+                }
+
+                
+                total = quantidade * preco;
             }
-            if (txtPreco.Text != "")
-            {
 
-                preco = float.Parse(txtPreco.Text);
-            }
-
-
-            total = quantidade * preco;
+           
 
             txtTotal.Text = total.ToString("F2");
         }
@@ -289,6 +308,7 @@ namespace PizzariaWinForm.Formularios
             float quantidade = 0;
             float total = 0;
 
+            float resultado = 0;
 
             float preco = 0;
             if (txtQuantidade.Text != "")
@@ -300,14 +320,14 @@ namespace PizzariaWinForm.Formularios
 
                 preco = float.Parse(txtPreco.Text);
             }
-            if (rbBroto.Text == "Broto" && txtTotal.Text != "")
+            if (rbBroto.Checked == true && txtTotal.Text != "")
             {
+                resultado = preco * 0.9f;
                 total = (quantidade * preco) * 0.9f;
+
             }
-            else
-            {
-                total = quantidade * preco;
-            }
+            txtPreco.Text = resultado.ToString("F2");
+           
             txtTotal.Text = total.ToString("F2");
         }
 

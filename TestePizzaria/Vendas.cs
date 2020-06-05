@@ -485,7 +485,7 @@ namespace PizzariaWinForm
             dr = comando.ExecuteReader();
             while (dr.Read())
             {
-                string preco = (string)dr["precoProduto"].ToString();
+                string preco = (string)dr["precoVendaProduto"].ToString();
                 txtpreco.Text = preco;
                 string tipo = (string)dr["categoriaProduto"].ToString();
                 txttipo.Text = tipo;

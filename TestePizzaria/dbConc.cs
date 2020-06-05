@@ -42,13 +42,6 @@ namespace PizzariaWinForm
                 cn.Close();
 
         }
-        public void Teste(string teste)
-        {
-            if (test == "Pizzria1 ")
-            {
-                conexao = conexao1;
-            }
-        }
-    }
+     }
 }
 
