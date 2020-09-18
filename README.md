@@ -1,15 +1,22 @@
 # Por que?
-Proejto realizado através de uma necessidade academica.Executado com liguagem C# utilizando winforms, usando banco de dados na nuvem aws.
+Proejto realizado através de uma necessidade academica, e adiquirir conhecimentos em POO e C#.Executado com liguagem C# utilizando winforms, usando banco de dados na nuvem aws, com o banco MySql.
 
 
 # Sistema 
 Realiza Cadastro/Atualização/Listagem/Exclusão  de Produtos e Cliente e Registro de Vendas.Gerar Relatório de Vendas. 
 
 
-- Telas de **login**,**Menu**,**Pedido**.
-> Sendo essas as telas de maior importância dentro do software das quais vão ter uso de cerca de 70% dentro de todo software elas foram estilizadas para ter o melhor funcionamento do úsuario.
-<img src="Prints_Pizzaria/Tela_Login.PNG">
+- Telas do Sistema.
 
-<img src="Prints_Pizzaria/Tela_Menu.PNG">
+Através das telas proporcionam o objetivo dos sistema.
 
-<img src="Prints_Pizzaria/Tela_Pedido.PNG">
+<img src="images/TelaLogin.PNG">
+
+<img src="images/TelaHome.PNG">
+
+<img src="images/TeladeRelatorios.PNG">
+
+#Como rodar essa aplicacao?
+Essa aplicacao foi construida na IDE Visual Studio 2019, para conseguir rodar aplicacao basta clonar através do comando 
+
+
