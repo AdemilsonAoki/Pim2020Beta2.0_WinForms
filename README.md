@@ -16,7 +16,9 @@ Através das telas proporcionam o objetivo dos sistema.
 
 <img src="images/TeladeRelatorios.PNG">
 
-#Como rodar essa aplicacao?
+# Como rodar essa aplicacao?
 Essa aplicacao foi construida na IDE Visual Studio 2019, para conseguir rodar aplicacao basta clonar através do comando 
+
+git clone : https://github.com/AdemilsonAoki/Pim2020Beta2.0_WinForms.git
 
 
