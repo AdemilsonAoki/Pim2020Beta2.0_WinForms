@@ -16,7 +16,7 @@ namespace PizzariaWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new splash());
+            Application.Run(new frmMenu());
         }
     }
 }

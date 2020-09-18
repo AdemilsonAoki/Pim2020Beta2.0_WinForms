@@ -40,7 +40,6 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -182,19 +181,6 @@
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            this.label5.Location = new System.Drawing.Point(493, 455);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 23);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Esqueceu a senha?";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -232,7 +218,6 @@
             this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label4);
@@ -270,7 +255,6 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
     }
